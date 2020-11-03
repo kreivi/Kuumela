@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://earth/earth.svg" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 511.912
+
+[node name="Earth" type="Area2D"]
+
+[node name="EarthCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="EarthSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
