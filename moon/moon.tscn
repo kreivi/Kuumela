@@ -1,26 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://moon/moon.svg" type="Texture" id=1]
-[ext_resource path="res://moon/cannon.svg" type="Texture" id=2]
+[ext_resource path="res://moon/moon.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 128.005
+radius = 32.5467
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 128.483, 16.4166 )
-
-[node name="Moon" type="Area2D"]
+[node name="Moon" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="MoonCollider" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[node name="MoonCannonCollider" type="CollisionShape2D" parent="."]
-position = Vector2( 128, 0 )
-shape = SubResource( 2 )
-
-[node name="MoonCannon" type="Sprite" parent="."]
-position = Vector2( 128, 0 )
-texture = ExtResource( 2 )
 
 [node name="MoonSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
