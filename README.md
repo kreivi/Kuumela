@@ -8,4 +8,4 @@ Jam theme is moonshot
 
 # Concept
 
-Player defends planet earth from outer space threats with cannon mounted on the moon.
+Player defends planet earth from outer space threats using moon as paddle to knock incoming stuff away.
