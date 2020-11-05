@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 # Signal when earth gets hit
 signal earth_hit
@@ -15,3 +15,9 @@ func _physics_process(delta):
 		rot -= 1
 	# Apply rotation
 	$MoonSpatial.rotation += PI * rot * delta
+
+
+func _on_Earth_body_entered(body):
+	emit_signal("earth_hit")
+	body.queue_free()
+	pass # Replace with function body.
