@@ -1,10 +1,10 @@
-# Mooncannon
+# Kuumela
 
-Mooncannon is entry for annual game jam called [Game Off](https://itch.io/jam/game-off-2020)
+Kuumela is entry for annual game jam called [Game Off](https://itch.io/jam/game-off-2020)
 
 ## Theme
 
-Jam theme is moonshot
+Jam theme is Moonshot
 
 # Concept
 
