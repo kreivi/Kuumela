@@ -19,6 +19,10 @@ config/name="Kuumela"
 run/main_scene="res://main/main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 clockwise={
@@ -38,4 +42,5 @@ counter_clockwise={
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
