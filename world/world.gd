@@ -12,12 +12,11 @@ func spawn_asteroid():
 	# Instance Asteroid
 	var asteroid = Asteroid.instance()
 	add_child(asteroid)
-	var direction = $AsteroidPath/AsteroidSpawnLocation.rotation + PI / 2
 	asteroid.position = $AsteroidPath/AsteroidSpawnLocation.position
-	direction += rand_range(-PI / 4, PI / 4)
-	asteroid.rotation = direction
+	var dir = ($Earth.position - asteroid.position).normalized()
+	asteroid.rotation = dir.angle()
 	asteroid.linear_velocity = Vector2(rand_range(asteroid.min_speed, asteroid.max_speed), 0)
-	asteroid.linear_velocity = asteroid.linear_velocity.rotated(direction)
+	asteroid.linear_velocity = asteroid.linear_velocity.rotated(dir.angle())
 
 
 func _on_AsteroidSpawner_timeout():
