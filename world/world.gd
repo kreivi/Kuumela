@@ -21,3 +21,7 @@ func spawn_asteroid():
 
 func _on_AsteroidSpawner_timeout():
 	spawn_asteroid()
+
+
+func _on_Earth_hit():
+	pass # Replace with function body.

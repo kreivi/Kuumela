@@ -15,7 +15,6 @@ Asteroid = ExtResource( 3 )
 
 [node name="Earth" parent="." instance=ExtResource( 1 )]
 position = Vector2( 544, 280 )
-rotation_speed = 10
 
 [node name="Camera2D" type="Camera2D" parent="Earth"]
 current = true
@@ -29,4 +28,5 @@ curve = SubResource( 1 )
 [node name="AsteroidSpawnLocation" type="PathFollow2D" parent="AsteroidPath"]
 position = Vector2( -596.823, -360 )
 offset = 0.00390625
+[connection signal="earth_hit" from="Earth" to="." method="_on_Earth_hit"]
 [connection signal="timeout" from="AsteroidSpawner" to="." method="_on_AsteroidSpawner_timeout"]
