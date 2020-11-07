@@ -5,3 +5,7 @@ func new_game():
 
 func game_over():
 	pass
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
