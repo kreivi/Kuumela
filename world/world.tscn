@@ -14,11 +14,10 @@ script = ExtResource( 2 )
 Asteroid = ExtResource( 3 )
 
 [node name="Earth" parent="." instance=ExtResource( 1 )]
-position = Vector2( 544, 280 )
+position = Vector2( 512, 300 )
 
 [node name="Camera2D" type="Camera2D" parent="Earth"]
 current = true
-zoom = Vector2( 2, 2 )
 
 [node name="AsteroidSpawner" type="Timer" parent="."]
 
