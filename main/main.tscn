@@ -10,3 +10,11 @@ script = ExtResource( 3 )
 [node name="World" parent="." instance=ExtResource( 2 )]
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 8.64
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
