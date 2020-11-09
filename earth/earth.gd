@@ -9,6 +9,7 @@ export (float, 0, 1.0) var acceleration = 0.5
 
 # Export the speed so it can be altered via properties
 export var rotation_speed = 10
+export var earth_rotation_speed = 0.727
 
 var velocity = Vector2.ZERO
 
@@ -26,7 +27,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	$MoonSpatial.rotate(velocity.x * delta)
-
+	$EarthSprite.rotate(earth_rotation_speed * delta)
+	
 func _on_Earth_body_entered(body):
 	emit_signal("earth_hit")
 	body.queue_free()
