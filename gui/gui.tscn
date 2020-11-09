@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://gui/goldman_regular.tres" type="DynamicFont" id=1]
 [ext_resource path="res://gui/gui.gd" type="Script" id=2]
 
 [node name="GUI" type="Control"]
@@ -22,8 +21,7 @@ __meta__ = {
 
 [node name="ScoreLabel" type="Label" parent="ScoreContainer"]
 margin_right = 124.0
-margin_bottom = 20.0
-custom_fonts/font = ExtResource( 1 )
+margin_bottom = 14.0
 custom_colors/font_color = Color( 0.0313726, 0, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.72549, 0.00392157, 0.290196, 1 )
 text = "Days Survived:"
@@ -32,11 +30,10 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="ScoreContainer"]
-margin_top = 24.0
+margin_top = 18.0
 margin_right = 124.0
-margin_bottom = 67.0
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0.807843, 0, 0, 1 )
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0.784314, 0.0352941, 0.0352941, 1 )
 custom_colors/font_color_shadow = Color( 0.607843, 0.623529, 0, 1 )
 text = "0
 "
