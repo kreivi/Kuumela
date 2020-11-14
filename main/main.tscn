@@ -17,4 +17,6 @@ margin_bottom = 600.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 wait_time = 8.64
+[connection signal="deduct_life" from="World" to="." method="_on_World_deduct_life"]
+[connection signal="request_new" from="GUI" to="." method="_on_GUI_request_new"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
