@@ -1,10 +1,17 @@
 extends Node
 
 export (PackedScene) var Asteroid
+signal deduct_life
 
 func _ready():
-	$AsteroidSpawner.start()
 	randomize()
+	
+func new_game():
+	$AsteroidSpawner.start()
+
+func game_over():
+	get_tree().call_group('asteroids', 'queue_free')
+	$AsteroidSpawner.stop()
 
 func spawn_asteroid():
 	# Pick random point to spawn asteroid from
@@ -24,4 +31,4 @@ func _on_AsteroidSpawner_timeout():
 
 
 func _on_Earth_hit():
-	pass # Replace with function body.
+	emit_signal("deduct_life")
