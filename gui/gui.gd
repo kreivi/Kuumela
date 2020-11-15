@@ -3,6 +3,7 @@ extends Control
 signal request_new
 
 func new_game():
+	set_score(0)
 	$MainMenu.hide()
 	$Game.show()
 	set_lives(3)
@@ -11,9 +12,9 @@ func game_over():
 	$Game.hide()
 	$MainMenu.show()
 	set_lives(0)
-	set_score(0)
 	
 func set_score(newscore):
+	$MainMenu/Menu/Scorewrapper/Score.text = str(newscore)
 	$Game/BottomPanel/ScoreContainer/Score.text = str(newscore)
 
 func set_life_visibilities(one, two, three):
