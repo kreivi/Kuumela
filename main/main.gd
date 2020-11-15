@@ -4,7 +4,7 @@ var score = 0
 var lives = 3
 
 func _ready():
-	new_game()
+	game_over()
 	
 func new_game():
 	lives = 3
