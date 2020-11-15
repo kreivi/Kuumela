@@ -7,11 +7,13 @@ func _ready():
 	randomize()
 	
 func new_game():
+	$Earth.visible = true
 	$AsteroidSpawner.start()
 
 func game_over():
 	get_tree().call_group('asteroids', 'queue_free')
 	$AsteroidSpawner.stop()
+	$Earth.visible = false
 
 func spawn_asteroid():
 	# Pick random point to spawn asteroid from
