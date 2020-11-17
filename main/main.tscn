@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gui/gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/world.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/main.gd" type="Script" id=3]
+[ext_resource path="res://main/iampacman.ogg" type="AudioStream" id=4]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
@@ -17,6 +18,11 @@ margin_bottom = 600.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 wait_time = 8.64
+
+[node name="BGMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -30.0
+autoplay = true
 [connection signal="deduct_life" from="World" to="." method="_on_World_deduct_life"]
 [connection signal="request_new" from="GUI" to="." method="_on_GUI_request_new"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
