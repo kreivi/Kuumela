@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://asteroid/asteroid.gd" type="Script" id=1]
 [ext_resource path="res://asteroid/asteroid.svg" type="Texture" id=2]
 [ext_resource path="res://trail/trail.tscn" type="PackedScene" id=3]
 [ext_resource path="res://trail/trail_curve.tres" type="Curve" id=4]
+[ext_resource path="res://asteroid/impactMetal_004.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.11395
@@ -34,4 +35,8 @@ z_index = -1
 width_curve = ExtResource( 4 )
 default_color = Color( 0.823529, 0.482353, 0.00392157, 1 )
 gradient = SubResource( 2 )
+
+[node name="ImpactEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+[connection signal="body_entered" from="." to="." method="_on_Asteroid_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]
