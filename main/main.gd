@@ -26,7 +26,7 @@ func _input(event):
 func _on_ScoreTimer_timeout():
 	score += 1
 	$GUI.set_score(score)
-	if (score % 2 == 0):
+	if (score % 3 == 0):
 		$World.rampup_difficulty()
 
 
