@@ -12,14 +12,14 @@ func _ready():
 	randomize()
 	
 func new_game():
-	$Earth.visible = true
+	$Earth.new_game()
 	$AsteroidSpawner.start()
 	calc_difficulty()
 
 func game_over():
 	get_tree().call_group('asteroids', 'queue_free')
 	$AsteroidSpawner.stop()
-	$Earth.visible = false
+	$Earth.game_over()
 	difficulty_factor = 1
 
 func calc_difficulty():

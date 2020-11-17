@@ -36,3 +36,10 @@ func _on_Earth_body_entered(body):
 
 func impact_fx(body):
 	$ImpactSFX.play()
+
+func new_game():
+	$MoonSpatial.rotation = 0
+	visible = true
+
+func game_over():
+	visible = false
