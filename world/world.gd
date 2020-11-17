@@ -23,11 +23,10 @@ func game_over():
 	difficulty_factor = 1
 
 func calc_difficulty():
-	var colSize = $Earth/EarthCollision.get_viewport_rect().size
-	scatter = colSize * (1 / difficulty_factor) * .5
+	var size = $Earth/EarthSprite.texture.get_size()
+	scatter = size * (1 / difficulty_factor) * 1.25
 	var newWait = 1 - (difficulty_factor * 0.1)
 	$AsteroidSpawner.wait_time = max(newWait, 0.05)
-	
 	
 
 func spawn_asteroid():
