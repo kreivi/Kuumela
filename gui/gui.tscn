@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gui/life.svg" type="Texture" id=1]
 [ext_resource path="res://gui/gui.gd" type="Script" id=2]
+[ext_resource path="res://gui/fonts/contrailone_regular.tres" type="DynamicFont" id=3]
+[ext_resource path="res://gui/fonts/goldman_regular.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.478431, 0.478431, 0.478431, 0.117647 )
@@ -26,49 +28,77 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -59.0
-margin_top = -23.0
-margin_right = 59.0
-margin_bottom = 23.0
+margin_left = -79.0
+margin_top = -29.0
+margin_right = 79.0
+margin_bottom = 29.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Scorewrapper" type="HBoxContainer" parent="MainMenu/Menu"]
-margin_right = 118.0
-margin_bottom = 14.0
+margin_right = 158.0
+margin_bottom = 20.0
 
 [node name="ScoreLabel" type="Label" parent="MainMenu/Menu/Scorewrapper"]
-margin_right = 106.0
-margin_bottom = 14.0
+margin_right = 142.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 4 )
 text = "You survived for:"
 
 [node name="Score" type="Label" parent="MainMenu/Menu/Scorewrapper"]
-margin_left = 110.0
-margin_right = 118.0
-margin_bottom = 14.0
+margin_left = 146.0
+margin_right = 158.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 4 )
 text = "0"
 
 [node name="HSeparator" type="HSeparator" parent="MainMenu/Menu"]
-margin_top = 18.0
-margin_right = 118.0
-margin_bottom = 22.0
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 28.0
 
 [node name="NewGame" type="Button" parent="MainMenu/Menu"]
-margin_top = 26.0
-margin_right = 118.0
-margin_bottom = 46.0
+margin_top = 32.0
+margin_right = 158.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
 text = "New Game"
 
 [node name="Label" type="Label" parent="MainMenu"]
 anchor_right = 1.0
 margin_bottom = 263.0
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0.337255, 0.905882, 1 )
+custom_colors/font_outline_modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0.584314, 0.584314, 0.584314, 1 )
 text = "Kuumela"
 align = 1
 valign = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -186.0
+margin_top = -190.0
+margin_right = 186.0
+custom_fonts/font = ExtResource( 4 )
+text = "Controls
+
+Clockwise - D / Right / Gamepad Right
+Counter-Clockwise - A / Left / Gamepad Left
+
+
+Try to survive as long as you can...
+"
+align = 1
 
 [node name="Game" type="Control" parent="."]
 anchor_right = 1.0
@@ -98,14 +128,15 @@ __meta__ = {
 
 [node name="LivesLabel" type="Label" parent="Game/BottomPanel/LivesContainer"]
 margin_right = 488.0
-margin_bottom = 14.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 4 )
 text = "Lives:"
 align = 2
 
 [node name="Lives" type="HBoxContainer" parent="Game/BottomPanel/LivesContainer"]
-margin_top = 18.0
+margin_top = 24.0
 margin_right = 488.0
-margin_bottom = 50.0
+margin_bottom = 56.0
 alignment = 2
 
 [node name="Life1" type="TextureRect" parent="Game/BottomPanel/LivesContainer/Lives"]
@@ -138,20 +169,19 @@ __meta__ = {
 
 [node name="ScoreLabel" type="Label" parent="Game/BottomPanel/ScoreContainer"]
 margin_right = 581.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0.0313726, 0, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.72549, 0.00392157, 0.290196, 1 )
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 4 )
 text = "Days Survived:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Score" type="Label" parent="Game/BottomPanel/ScoreContainer"]
-margin_top = 18.0
+margin_top = 24.0
 margin_right = 581.0
-margin_bottom = 49.0
-custom_colors/font_color = Color( 0.784314, 0.0352941, 0.0352941, 1 )
-custom_colors/font_color_shadow = Color( 0.607843, 0.623529, 0, 1 )
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.886275, 0.0117647, 0.984314, 1 )
 text = "0
 "
 valign = 1

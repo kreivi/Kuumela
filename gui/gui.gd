@@ -2,7 +2,11 @@ extends Control
 
 signal request_new
 
+func _ready():
+	$MainMenu/Menu/Scorewrapper.visible = false
+	
 func new_game():
+	$MainMenu/Menu/Scorewrapper.visible = true
 	set_score(0)
 	$MainMenu.hide()
 	$Game.show()
