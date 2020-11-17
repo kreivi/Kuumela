@@ -25,4 +25,5 @@ volume_db = -30.0
 autoplay = true
 [connection signal="deduct_life" from="World" to="." method="_on_World_deduct_life"]
 [connection signal="request_new" from="GUI" to="." method="_on_GUI_request_new"]
+[connection signal="toggle_music" from="GUI" to="." method="_on_GUI_toggle_music"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

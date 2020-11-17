@@ -45,7 +45,12 @@ func _on_World_deduct_life():
 	if lives <= 0:
 		game_over()
 
-
-
 func _on_GUI_request_new():
 	new_game()
+
+func _on_GUI_toggle_music(enabled):
+	if (enabled):
+		$BGMusicPlayer.play()
+	else:
+		$BGMusicPlayer.stop()
+	

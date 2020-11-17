@@ -1,6 +1,7 @@
 extends Control
 
 signal request_new
+signal toggle_music
 
 func _ready():
 	$MainMenu/Menu/Scorewrapper.visible = false
@@ -40,3 +41,8 @@ func set_lives(newLives):
 
 func _on_NewGame_pressed():
 	emit_signal('request_new')
+
+
+func _on_Music_toggled(button_pressed):
+	emit_signal("toggle_music", button_pressed)
+
