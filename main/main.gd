@@ -28,12 +28,20 @@ func _on_ScoreTimer_timeout():
 	$GUI.set_score(score)
 	if (score % 3 == 0):
 		$World.rampup_difficulty()
+	if (score % 7 == 0):
+		grant_life()
 
-
-func _on_World_deduct_life():
-	lives -= 1
-	if lives > 0:
+func set_lives(newLives):
+	if (newLives <= 3 && newLives != lives):
+		lives = newLives
 		$GUI.set_lives(lives)
+	
+func grant_life():
+	if (lives < 3):
+		set_lives(lives + 1)
+		
+func _on_World_deduct_life():
+	set_lives(lives - 1)
 	if lives <= 0:
 		game_over()
 
