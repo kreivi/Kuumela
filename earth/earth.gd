@@ -31,5 +31,8 @@ func _physics_process(delta):
 	
 func _on_Earth_body_entered(body):
 	emit_signal("earth_hit")
+	impact_fx(body)
 	body.queue_free()
-	pass # Replace with function body.
+
+func impact_fx(body):
+	$ImpactSFX.play()
