@@ -109,7 +109,7 @@ __meta__ = {
 }
 
 [node name="Music" type="CheckButton" parent="MainMenu/FXContainer"]
-margin_right = 134.0
+margin_right = 124.0
 margin_bottom = 40.0
 focus_mode = 0
 pressed = true
@@ -130,7 +130,18 @@ margin_top = -61.0
 margin_right = -32.0
 texture = ExtResource( 5 )
 
+[node name="Label2" type="Label" parent="MainMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_right = 40.0
+text = "Created by: Severi Vidnäs"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Game" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
