@@ -5,16 +5,18 @@ signal toggle_music
 
 func _ready():
 	$MainMenu/Menu/Scorewrapper.visible = false
-	
+
 func new_game():
 	$MainMenu/Menu/Scorewrapper.visible = true
 	set_score(0)
 	$MainMenu.hide()
+	$Credits.hide()
 	$Game.show()
 	set_lives(3)
 
 func game_over():
 	$Game.hide()
+	$Credits.hide()
 	$MainMenu.show()
 	set_lives(0)
 	
@@ -26,7 +28,7 @@ func set_life_visibilities(one, two, three):
 	$Game/BottomPanel/LivesContainer/Lives/Life1.visible = one
 	$Game/BottomPanel/LivesContainer/Lives/Life2.visible = two
 	$Game/BottomPanel/LivesContainer/Lives/Life3.visible = three
-		
+
 func set_lives(newLives):
 	# TODO: Ugly code blaargh í ¾í´®í ¾
 	if newLives == 3:
@@ -38,11 +40,19 @@ func set_lives(newLives):
 	else:
 		set_life_visibilities(false, false, false)
 
-
 func _on_NewGame_pressed():
 	emit_signal('request_new')
-
 
 func _on_Music_toggled(button_pressed):
 	emit_signal("toggle_music", button_pressed)
 
+func _on_CreditsButton_pressed():
+	$MainMenu.hide()
+	$Game.hide()
+	$Credits.show()
+
+
+func _on_CreditsBackButton_pressed():
+	$Credits.hide()
+	$Game.hide()
+	$MainMenu.show()

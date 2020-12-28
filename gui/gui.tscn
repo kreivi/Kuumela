@@ -18,6 +18,7 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -130,12 +131,12 @@ margin_top = -61.0
 margin_right = -32.0
 texture = ExtResource( 5 )
 
-[node name="Label2" type="Label" parent="MainMenu"]
+[node name="CreditsButton" type="LinkButton" parent="MainMenu"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
 margin_right = 40.0
-text = "Created by: Severi Vidnäs"
+text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -230,5 +231,129 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Credits" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Credits"]
+margin_left = 398.708
+margin_top = 91.3937
+margin_right = 624.708
+margin_bottom = 172.394
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0.337255, 0.905882, 1 )
+custom_colors/font_outline_modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
+custom_colors/font_color_shadow = Color( 0.584314, 0.584314, 0.584314, 1 )
+text = "Kuumela"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.5
+margin_top = -135.5
+margin_right = 174.5
+margin_bottom = 135.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits1" type="Label" parent="Credits/VBoxContainer"]
+margin_right = 349.0
+margin_bottom = 31.0
+text = "Game made by:
+Severi Vidnäs"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Credits/VBoxContainer"]
+margin_top = 35.0
+margin_right = 349.0
+margin_bottom = 39.0
+
+[node name="Credits2" type="Label" parent="Credits/VBoxContainer"]
+margin_top = 43.0
+margin_right = 349.0
+margin_bottom = 74.0
+text = "Using Godot Engine
+(https://godotengine.org/license)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator2" type="HSeparator" parent="Credits/VBoxContainer"]
+margin_top = 78.0
+margin_right = 349.0
+margin_bottom = 82.0
+
+[node name="Credits3" type="Label" parent="Credits/VBoxContainer"]
+margin_top = 86.0
+margin_right = 349.0
+margin_bottom = 134.0
+text = "Music:
+I Am Pacman by Antti Luode
+(https://creativecommons.org/licenses/by/3.0/)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator3" type="HSeparator" parent="Credits/VBoxContainer"]
+margin_top = 138.0
+margin_right = 349.0
+margin_bottom = 142.0
+
+[node name="Credits4" type="Label" parent="Credits/VBoxContainer"]
+margin_top = 146.0
+margin_right = 349.0
+margin_bottom = 194.0
+text = "Sound Effects:
+Kenney Sci-Fi Sounds
+(https://creativecommons.org/publicdomain/zero/1.0/)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator4" type="HSeparator" parent="Credits/VBoxContainer"]
+margin_top = 198.0
+margin_right = 349.0
+margin_bottom = 202.0
+
+[node name="Credits5" type="Label" parent="Credits/VBoxContainer"]
+margin_top = 206.0
+margin_right = 349.0
+margin_bottom = 271.0
+text = "Fonts
+ContrailOne by Sorking Type Co
+Goldman by The Goldman Project Authors
+(http://scripts.sil.org/OFL)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsBackButton" type="LinkButton" parent="Credits"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_right = 40.0
+text = "Back"
 [connection signal="pressed" from="MainMenu/Menu/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="toggled" from="MainMenu/FXContainer/Music" to="." method="_on_Music_toggled"]
+[connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Credits/CreditsBackButton" to="." method="_on_CreditsBackButton_pressed"]
